@@ -1,5 +1,4 @@
 chrome.storage.local.get(["rate_hufeur", "rate_eurrsd"], (data) => {
-	console.log("data.rate_hufeur: "+data.rate_hufeur);
   const rate_hufeur = data.rate_hufeur || "0.00238392857142857142857142857143";
   const rate_eurrsd = data.rate_eurrsd || "117";
   console.log("[IponPrices] 💱 Rates loaded: ", rate_hufeur, rate_eurrsd);
