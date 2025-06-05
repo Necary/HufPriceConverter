@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 10px; width: 200px; }
+    label, input { display: block; margin: 5px 0; }
+  </style>
+</head>
+<body>
+<h4>Exchange rates:</h4>
+<p>Insert a formula to count rates or just insert rate here. For example "/400*0.9*1.05" will be the same as "*0.0023625"</p>
+  <label>HUF > EUR</label>
+  <input type="text" id="hufeur" placeholder="/392*0.917">
+
+  <label>EUR > RSD</label>
+  <input type="text" id="eurrsd" placeholder="*117">
+
+  <button id="save">Save</button> <a style="float:right;" target="_blank" href="https://t.me/RacoonTech">@racoontech</a>
+<p id="status" style="display:none; color:green;">Some log messages will be here.</p>
+</body>
+<script src="popup.js"></script>
+</html>
