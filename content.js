@@ -15,8 +15,6 @@ function parseAndConvertPrice(text) {
 		}
 	    const eur = parseInt(match[1].replace(/\s/g, ''));
         const converted_rsd = (eur * rate_eurrsd).toFixed(2);
-		
-		console.log("eur="+eur+" rsd="+converted_rsd+"("+match+")");
         return `~RSD${converted_rsd}`;
     }
   const huf = parseInt(match[1].replace(/\s/g, ''));
