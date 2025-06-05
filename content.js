@@ -8,8 +8,14 @@ chrome.storage.local.get(["rate_hufeur", "rate_eurrsd"], (data) => {
 function parseAndConvertPrice(text) {
   const match = text.match(/([\d\s]+)\s*Ft/);
   if (!match) {
-      console.log("[IponPrices] ❌ Could not parse:", text);
-      return null;
+	  const match = text.match(/([\d\s]+)\s*€/);
+	    if (!match) {
+          console.log("[IponPrices] ❌ Could not parse:", text);
+          return null;
+		}
+	    const eur = parseInt(match[1].replace(/\s/g, ''));
+        const converted_rsd = (eur * rate_eurrsd).toFixed(2);
+        return `~RSD${converted_rsd}`;
     }
   const huf = parseInt(match[1].replace(/\s/g, ''));
   const converted = (huf * rate_hufeur).toFixed(2);
